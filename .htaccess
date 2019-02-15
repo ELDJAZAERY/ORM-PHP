@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# allow access to all files within src !!
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^src($|/) - [L]
+
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+
+
+ErrorDocument 404 http://localhost/midad/404
